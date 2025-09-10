@@ -14,5 +14,15 @@ class Course extends Model
 {
     return $this->belongsToMany(Student::class, 'course_student'); // ✅ صح
 }
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+    public function trainer()
+    {
+        return $this->belongsTo(Trainer::class);
+    }
+
+    
 
 }

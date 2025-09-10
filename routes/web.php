@@ -5,7 +5,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home');
+    return redirect('home');
 });
 
 Route::get('/dashboard', function () {
@@ -19,5 +19,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('home',[HomeController::class,'home'])->name('home');
+// Route::get('home',[HomeController::class,'test'])->name('test');
+
 
 require __DIR__.'/auth.php';

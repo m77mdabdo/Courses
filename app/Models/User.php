@@ -30,6 +30,15 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
     ];
 
+    public function student(){
+        return $this->hasOne(Student::class,'user_id','id');
+    }
+    public function trainer(){
+        return $this->hasOne(Trainer::class,'user_id','id');
+    }
+
+    
+
     /**
      * The attributes that should be hidden for serialization.
      *

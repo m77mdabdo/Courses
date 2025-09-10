@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -28,5 +29,7 @@ class AppServiceProvider extends ServiceProvider
             ->line('Click the button below to verify your email address.')
             ->action('Verify Email Address', $url);
     });
+
+       Paginator::useBootstrapFive();
     }
 }

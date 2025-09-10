@@ -108,25 +108,25 @@
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_member_counter">
-                        {{-- <span class="counter">{{$trainers}}</span> --}}
+                        <span class="counter">{{ $trainers }}</span>
                         <h4>All Teachers</h4>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_member_counter">
-                        {{-- <span class="counter">{{$allstudents}}</span> --}}
+                        <span class="counter">{{  $allStudents}}</span>
                         <h4> All Students</h4>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_member_counter">
-                        {{-- <span class="counter">{{$onlinestudents}}</span> --}}
+                        <span class="counter">{{$onlineStudents}}</span>
                         <h4>Online Students</h4>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_member_counter">
-                        {{-- <span class="counter">{{$offlinestudents}}</span> --}}
+                        <span class="counter">{{ $offlineStudents}}</span>
                         <h4>Ofline Students</h4>
                     </div>
                 </div>
@@ -147,21 +147,21 @@
                 </div>
             </div>
             <div class="row">
-                 {{-- @foreach ($courses as $course)  --}}
+                 @foreach ($allCourses as $course)
                     <div class="col-sm-6 col-lg-4">
                     <div class="single_special_cource">
                         <img src="img/special_cource_1.png" class="special_img" alt="">
                         <div class="special_cource_text">
-                            {{-- <a href="course-details.html" class="btn_4">{{ $course->category->title }}</a> --}}
-                            {{-- <h4>${{  $course->price }}</h4> --}}
-                            {{-- <a href="course-details.html"><h3>{{  $course->title }}</h3></a> --}}
+                            <a href="course-details.html" class="btn_4">{{ $course->category->title }}</a>
+                            <h4>${{  $course->price }}</h4>
+                            <a href="course-details.html"><h3>{{  $course->title }}</h3></a>
                             <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
                             <div class="author_info">
                                 <div class="author_img">
                                     <img src="img/author/author_1.png" alt="">
                                     <div class="author_info_text">
                                         <p>Conduct by:</p>
-                                        {{-- <h5><a href="#">{{  $course->trainer->name }}</a></h5> --}}
+                                        <h5><a href="#">{{  $course->trainer->name }}</a></h5>
                                     </div>
                                 </div>
                                 <div class="author_rating">
@@ -179,9 +179,9 @@
 
                     </div>
                 </div>
-                {{-- @endforeach --}}
+                @endforeach
 
-                {{-- {{ $courses->links() }} --}}
+                {{ $allCourses->links() }}
 
 
             </div>
