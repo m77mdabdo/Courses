@@ -30,7 +30,7 @@
     <header class="main_menu home_menu">
         <div class="container">
             <div class="row align-items-center">
-                @include('inc.navbar')
+                @include('user.app.navbar')
             </div>
         </div>
     </header>

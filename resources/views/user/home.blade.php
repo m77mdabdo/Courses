@@ -1,6 +1,5 @@
-
-    @extends('inc.layout')
-    @section('content')
+@extends('user.app.layout')
+@section('content')
     <!-- banner part start-->
     <section class="banner_part">
         <div class="container">
@@ -8,20 +7,21 @@
                 <div class="col-lg-6 col-xl-6">
                     <div class="banner_text">
                         <div class="banner_text_iner">
-                            <h5>Every child yearns to learn</h5>
-                            <h1>Making Your Childs
-                                World Better</h1>
-                            <p>Replenish seasons may male hath fruit beast were seas saw you arrie said man beast whales
-                                his void unto last session for bite. Set have great you'll male grass yielding yielding
-                                man</p>
-                            <a href="#" class="btn_1">View Course </a>
-                            <a href="#" class="btn_2">Get Started </a>
+                            <h5>Upgrade Your Skills, Anytime</h5>
+                            <h1>Learn Online & Boost
+                                Your Career</h1>
+                            <p>Join thousands of learners and explore high-quality online courses taught by
+                                expert instructors. Flexible schedules, hands-on training, and recognized
+                                certificates to take your career to the next level.</p>
+                            <a href="courses.html" class="btn_1">Browse Courses</a>
+                            <a href="register.html" class="btn_2">Get Started</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- banner part start-->
 
     <!-- feature_part start-->
@@ -29,20 +29,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-xl-3 align-self-center">
-                    <div class="single_feature_text ">
-                        <h2>Awesome <br> Feature</h2>
-                        <p>Set have great you male grass yielding an yielding first their you're
-                            have called the abundantly fruit were man </p>
-                        <a href="#" class="btn_1">Read More</a>
+                    <div class="single_feature_text">
+                        <h2>Our <br> Features</h2>
+                        <p>Discover the key benefits of learning with us. Flexible courses, expert trainers,
+                            and career opportunities to help you achieve your goals.</p>
+                        <a href="courses.html" class="btn_1">Explore Courses</a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-xl-3">
                     <div class="single_feature">
                         <div class="single_feature_part">
                             <span class="single_feature_icon"><i class="ti-layers"></i></span>
-                            <h4>Better Future</h4>
-                            <p>Set have great you male grasses yielding yielding first their to
-                                called deep abundantly Set have great you male</p>
+                            <h4>Learn Anytime</h4>
+                            <p>Study at your own pace from anywhere in the world, using any device.</p>
                         </div>
                     </div>
                 </div>
@@ -50,9 +49,9 @@
                     <div class="single_feature">
                         <div class="single_feature_part">
                             <span class="single_feature_icon"><i class="ti-new-window"></i></span>
-                            <h4>Qualified Trainers</h4>
-                            <p>Set have great you male grasses yielding yielding first their to called
-                                deep abundantly Set have great you male</p>
+                            <h4>Expert Trainers</h4>
+                            <p>Gain knowledge from certified instructors and industry professionals
+                                with years of experience.</p>
                         </div>
                     </div>
                 </div>
@@ -60,15 +59,16 @@
                     <div class="single_feature">
                         <div class="single_feature_part single_feature_part_2">
                             <span class="single_service_icon style_icon"><i class="ti-light-bulb"></i></span>
-                            <h4>Job Oppurtunity</h4>
-                            <p>Set have great you male grasses yielding yielding first their to called deep
-                                abundantly Set have great you male</p>
+                            <h4>Career Support</h4>
+                            <p>Boost your career with internships, job placement guidance,
+                                and recognized certificates.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- upcoming_event part start-->
 
     <!-- learning part start-->
@@ -77,29 +77,29 @@
             <div class="row align-items-sm-center align-items-lg-stretch">
                 <div class="col-md-7 col-lg-7">
                     <div class="learning_img">
-                        <img src="img/learning_img.png" alt="">
+                        <img src="img/learning_img.png" alt="About Online Learning">
                     </div>
                 </div>
                 <div class="col-md-5 col-lg-5">
                     <div class="learning_member_text">
-                        <h5>About us</h5>
-                        <h2>Learning with Love
-                            and Laughter</h2>
-                        <p>Fifth saying upon divide divide rule for deep their female all hath brind Days and beast
-                            greater grass signs abundantly have greater also
-                            days years under brought moveth.</p>
+                        <h5>About Us</h5>
+                        <h2>Learn, Grow & Achieve
+                            Your Career Goals</h2>
+                        <p>We are dedicated to providing high-quality online courses designed by
+                            expert instructors. Our mission is to make learning accessible, flexible,
+                            and impactful for everyone.</p>
                         <ul>
-                            <li><span class="ti-pencil-alt"></span>Him lights given i heaven second yielding seas
-                                gathered wear</li>
-                            <li><span class="ti-ruler-pencil"></span>Fly female them whales fly them day deep given
-                                night.</li>
+                            <li><span class="ti-pencil-alt"></span> Flexible online learning – anytime, anywhere.</li>
+                            <li><span class="ti-ruler-pencil"></span> Practical training with real-world projects.</li>
+                            <li><span class="ti-cup"></span> Recognized certificates to boost your CV.</li>
                         </ul>
-                        <a href="#" class="btn_1">Read More</a>
+                        <a href="about.html" class="btn_1">Read More</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- learning part end-->
 
     <!-- member_counter counter start -->
@@ -114,19 +114,19 @@
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_member_counter">
-                        <span class="counter">{{  $allStudents}}</span>
+                        <span class="counter">{{ $allStudents }}</span>
                         <h4> All Students</h4>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_member_counter">
-                        <span class="counter">{{$onlineStudents}}</span>
+                        <span class="counter">{{ $onlineStudents }}</span>
                         <h4>Online Students</h4>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_member_counter">
-                        <span class="counter">{{ $offlineStudents}}</span>
+                        <span class="counter">{{ $offlineStudents }}</span>
                         <h4>Ofline Students</h4>
                     </div>
                 </div>
@@ -147,38 +147,41 @@
                 </div>
             </div>
             <div class="row">
-                 @foreach ($allCourses as $course)
+                @foreach ($allCourses as $course)
                     <div class="col-sm-6 col-lg-4">
-                    <div class="single_special_cource">
-                        <img src="img/special_cource_1.png" class="special_img" alt="">
-                        <div class="special_cource_text">
-                            <a href="course-details.html" class="btn_4">{{ $course->category->title }}</a>
-                            <h4>${{  $course->price }}</h4>
-                            <a href="course-details.html"><h3>{{  $course->title }}</h3></a>
-                            <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
-                            <div class="author_info">
-                                <div class="author_img">
-                                    <img src="img/author/author_1.png" alt="">
-                                    <div class="author_info_text">
-                                        <p>Conduct by:</p>
-                                        <h5><a href="#">{{  $course->trainer->name }}</a></h5>
+                        <div class="single_special_cource">
+                            <img src="img/special_cource_1.png" class="special_img" alt="">
+                            <div class="special_cource_text">
+                                <a href="course-details.html" class="btn_4">{{ $course->category->title }}</a>
+                                <h4>${{ $course->price }}</h4>
+                                <a href="course-details.html">
+                                    <h3>{{ $course->title }}</h3>
+
+                                </a>
+                                <p>{{ $course->small_desc }}</p>
+                                <div class="author_info">
+                                    <div class="author_img">
+                                        <img src="img/author/author_1.png" alt="">
+                                        <div class="author_info_text">
+                                            <p>Conduct by:</p>
+                                            <h5><a href="#">{{ $course->trainer->name }}</a></h5>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="author_rating">
-                                    <div class="rating">
-                                        <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                        <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                        <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                        <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
-                                        <a href="#"><img src="img/icon/star.svg" alt=""></a>
-                                    </div>
-                                    <p>3.8 Ratings</p>
+                                    {{-- <div class="author_rating">
+                                        <div class="rating">
+                                            <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
+                                            <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
+                                            <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
+                                            <a href="#"><img src="img/icon/color_star.svg" alt=""></a>
+                                            <a href="#"><img src="img/icon/star.svg" alt=""></a>
+                                        </div>
+                                        <p>3.8 Ratings</p>
+                                    </div> --}}
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
-                </div>
                 @endforeach
 
                 {{ $allCourses->links() }}
@@ -195,38 +198,60 @@
             <div class="row align-items-sm-center align-items-xl-stretch">
                 <div class="col-md-6 col-lg-6">
                     <div class="learning_member_text">
-                        <h5>Advance feature</h5>
-                        <h2>Our Advance Educator
-                            Learning System</h2>
-                        <p>Fifth saying upon divide divide rule for deep their female all hath brind mid Days
-                            and beast greater grass signs abundantly have greater also use over face earth
-                            days years under brought moveth she star</p>
+                        <h5>Why Choose Us</h5>
+                        <h2>Our Advanced Learning System</h2>
+                        <p>
+                            We provide a modern and flexible education system that helps students
+                            learn anytime, anywhere with the guidance of professional instructors
+                            and advanced learning tools.
+                        </p>
+
                         <div class="row">
                             <div class="col-sm-6 col-md-12 col-lg-6">
                                 <div class="learning_member_text_iner">
-                                    <span class="ti-pencil-alt"></span>
+                                    <span class="ti-world"></span>
                                     <h4>Learn Anywhere</h4>
-                                    <p>There earth face earth behold she star so made void two given and also our</p>
+                                    <p>Access our courses online anytime, from any device.</p>
                                 </div>
                             </div>
+
                             <div class="col-sm-6 col-md-12 col-lg-6">
                                 <div class="learning_member_text_iner">
-                                    <span class="ti-stamp"></span>
-                                    <h4>Expert Teacher</h4>
-                                    <p>There earth face earth behold she star so made void two given and also our</p>
+                                    <span class="ti-user"></span>
+                                    <h4>Expert Teachers</h4>
+                                    <p>Our trainers are certified and have years of experience.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-12 col-lg-6">
+                                <div class="learning_member_text_iner">
+                                    <span class="ti-book"></span>
+                                    <h4>Wide Range of Courses</h4>
+                                    <p>Choose from multiple categories that fit your career goals.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-12 col-lg-6">
+                                <div class="learning_member_text_iner">
+                                    <span class="ti-cup"></span>
+                                    <h4>Certificates</h4>
+                                    <p>Earn recognized certificates after completing your courses.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- الصورة -->
                 <div class="col-lg-6 col-md-6">
                     <div class="learning_img">
-                        <img src="img/advance_feature_img.png" alt="">
+                        <img src="img/advance_feature_img.png" alt="Learning System">
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- learning part end-->
 
     <!--::review_part start::-->
@@ -419,6 +444,4 @@
     <!--::blog_part end::-->
 
     <!-- footer part start-->
-
-
 @endsection

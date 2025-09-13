@@ -18,7 +18,7 @@ class HomeController extends Controller
     $trainers = Trainer::count();
     $allCourses = Course::paginate(3);
 
-    return view('home', compact('trainers','allStudents','onlineStudents','offlineStudents','allCourses'));
+    return view('user.home', compact('trainers','allStudents','onlineStudents','offlineStudents','allCourses'));
 }
 
 

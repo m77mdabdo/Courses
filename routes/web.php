@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AbouteUs\AbouteUsController;
+use App\Http\Controllers\Course\CourseController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -18,8 +20,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('home',[HomeController::class,'home'])->name('home');
-// Route::get('home',[HomeController::class,'test'])->name('test');
 
+Route::get('home',[HomeController::class,'home'])->name('home');
+
+Route::get('aboutUs',[AbouteUsController::class,'abouteUs'])->name('abouteUs');
+
+Route::get('courses',[CourseController::class,'index'])->name('courses');
 
 require __DIR__.'/auth.php';
