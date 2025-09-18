@@ -30,14 +30,25 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
     ];
 
-    public function student(){
-        return $this->hasOne(Student::class,'user_id','id');
+    public function student()
+    {
+        return $this->hasOne(Student::class, 'user_id', 'id');
     }
-    public function trainer(){
-        return $this->hasOne(Trainer::class,'user_id','id');
+    public function trainer()
+    {
+        return $this->hasOne(Trainer::class, 'user_id', 'id');
+    }
+    public function blogs()
+    {
+        return $this->hasMany(Blog::class);
     }
 
-    
+    public function comments()
+    {
+        return $this->hasMany(BlogComment::class);
+    }
+
+
 
     /**
      * The attributes that should be hidden for serialization.

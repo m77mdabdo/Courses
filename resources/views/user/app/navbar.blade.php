@@ -20,9 +20,9 @@
                                     <a class="nav-link" href="{{route('courses')}}">Courses</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="blog.html">Blog</a>
+                                    <a class="nav-link" href="{{route('blogs.index')}}">Blog</a>
                                 </li>
-                                <li class="nav-item dropdown">
+                                {{-- <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Pages
                                     </a>
@@ -30,7 +30,7 @@
                                         <a class="dropdown-item" href="single-blog.html">Single blog</a>
                                         <a class="dropdown-item" href="elements.html">Elements</a>
                                     </div>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.html">Contact</a>
                                 </li>

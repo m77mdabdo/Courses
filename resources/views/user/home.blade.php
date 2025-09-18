@@ -152,9 +152,9 @@
                         <div class="single_special_cource">
                             <img src="img/special_cource_1.png" class="special_img" alt="">
                             <div class="special_cource_text">
-                                <a href="course-details.html" class="btn_4">{{ $course->category->title }}</a>
+                                <a href="{{ route('courses.show',$course->id) }}" class="btn_4">{{ $course->category->title }}</a>
                                 <h4>${{ $course->price }}</h4>
-                                <a href="course-details.html">
+                                <a href="{{ route('courses.show',$course->id) }}">
                                     <h3>{{ $course->title }}</h3>
 
                                 </a>
@@ -384,63 +384,51 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6 col-lg-4 col-xl-4">
-                    <div class="single-home-blog">
-                        <div class="card">
-                            <img src="img/blog/blog_1.png" class="card-img-top" alt="blog">
-                            <div class="card-body">
-                                <a href="#" class="btn_4">Design</a>
-                                <a href="blog.html">
-                                    <h5 class="card-title">Dry beginning sea over tree</h5>
-                                </a>
-                                <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
-                                <ul>
-                                    <li> <span class="ti-comments"></span>2 Comments</li>
-                                    <li> <span class="ti-heart"></span>2k Like</li>
-                                </ul>
+                @foreach ($blogs as $blog)
+                    <div class="col-sm-6 col-lg-4 col-xl-4">
+                        <div class="single-home-blog">
+                            <div class="card">
+                                <img src="{{ asset('storage/img' . $blog->image) }}" class="card-img-top"
+                                    alt="{{ $blog->title }}">
+                                <div class="card-body">
+                                    {{-- التصنيفات --}}
+                                    @if ($blog->categories->count())
+                                        @foreach ($blog->categories as $category)
+                                            <a href="#" class="btn_4">{{ $category->name }}</a>
+                                        @endforeach
+                                    @else
+                                        <a href="#" class="btn_4">Uncategorized</a>
+                                    @endif
+
+                                    {{-- العنوان --}}
+                                    <a href="{{ route('blogs.show', $blog->id) }}">
+                                        <h5 class="card-title">{{ $blog->title }}</h5>
+                                    </a>
+
+                                    {{-- المحتوى --}}
+                                    <p>{{ Str::limit($blog->content, 120) }}</p>
+
+                                    {{-- الكومنتات + لايكات (لو عندك عمود likes) --}}
+                                    <ul>
+                                        <li><span class="ti-comments"></span> {{ $blog->comments->count() }} Comments</li>
+                                        <li><span class="ti-heart"></span> {{ $blog->likes ?? 0 }} Likes</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-4">
-                    <div class="single-home-blog">
-                        <div class="card">
-                            <img src="img/blog/blog_2.png" class="card-img-top" alt="blog">
-                            <div class="card-body">
-                                <a href="#" class="btn_4">Developing</a>
-                                <a href="blog.html">
-                                    <h5 class="card-title">All beginning air two likeness</h5>
-                                </a>
-                                <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
-                                <ul>
-                                    <li> <span class="ti-comments"></span>2 Comments</li>
-                                    <li> <span class="ti-heart"></span>2k Like</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-4">
-                    <div class="single-home-blog">
-                        <div class="card">
-                            <img src="img/blog/blog_3.png" class="card-img-top" alt="blog">
-                            <div class="card-body">
-                                <a href="#" class="btn_4">Design</a>
-                                <a href="blog.html">
-                                    <h5 class="card-title">Form day seasons sea hand</h5>
-                                </a>
-                                <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
-                                <ul>
-                                    <li> <span class="ti-comments"></span>2 Comments</li>
-                                    <li> <span class="ti-heart"></span>2k Like</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                @endforeach
+            </div>
+
+            {{-- Pagination --}}
+            <div class="row mt-4">
+                <div class="col-12 d-flex justify-content-center">
+                    {{ $blogs->links() }}
                 </div>
             </div>
         </div>
     </section>
+
     <!--::blog_part end::-->
 
     <!-- footer part start-->

@@ -12,7 +12,7 @@ class Student extends Model
     protected $fillable = ['name', 'email', 'phone', 'address', 'user_id','age'];
     public function courses()
 {
-    return $this->belongsToMany(Course::class, 'course_student'); // ✅ صح
+    return $this->belongsToMany(Course::class, 'course_students'); // ✅ صح
 }
 
     public function user(){

@@ -9,10 +9,10 @@ class Course extends Model
 {
     //
        use HasFactory;
-    protected $fillable = ['title', 'description', 'category_id', 'trainer_id', 'price', 'duration'];
+    protected $fillable = ['title', 'desc', 'category_id', 'trainer_id', 'price', 'duration'];
     public function students()
 {
-    return $this->belongsToMany(Student::class, 'course_student'); // ✅ صح
+    return $this->belongsToMany(Student::class, 'course_students'); // ✅ صح
 }
     public function category()
     {
@@ -23,6 +23,6 @@ class Course extends Model
         return $this->belongsTo(Trainer::class);
     }
 
-    
+
 
 }

@@ -36,9 +36,9 @@
                         <div class="single_special_cource">
                             <img src="img/special_cource_1.png" class="special_img" alt="">
                             <div class="special_cource_text">
-                                <a href="course-details.html" class="btn_4">{{ $course->category->title }}</a>
+                                <a href="{{ route('courses.show',$course->id) }}" class="btn_4">{{ $course->category->title }}</a>
                                 <h4>${{ $course->price }}</h4>
-                                <a href="course-details.html">
+                                <a href="{{ route('courses.show',$course->id) }}">
                                     <h3>{{ $course->title }}</h3>
 
                                 </a>
@@ -48,7 +48,7 @@
                                         <img src="img/author/author_1.png" alt="">
                                         <div class="author_info_text">
                                             <p>Conduct by:</p>
-                                            <h5><a href="#">{{ $course->trainer->name }}</a></h5>
+                                            <h5><a href="{{route('courses.show',$course->id)}}">{{ $course->trainer->name }}</a></h5>
                                         </div>
                                     </div>
                                     {{-- <div class="author_rating">

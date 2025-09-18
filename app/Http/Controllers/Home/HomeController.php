@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Home;
 
-use App\Http\Controllers\Controller;
+use App\Models\Blog;
 use App\Models\Course;
 use App\Models\Student;
 use App\Models\Trainer;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
@@ -17,8 +18,9 @@ class HomeController extends Controller
     $offlineStudents = Student::where('courseLocation','onsite')->count();
     $trainers = Trainer::count();
     $allCourses = Course::paginate(3);
+    $blogs = Blog::with(['user','categories'])->latest()->paginate(3);
 
-    return view('user.home', compact('trainers','allStudents','onlineStudents','offlineStudents','allCourses'));
+    return view('user.home', compact('trainers','allStudents','onlineStudents','offlineStudents','allCourses','blogs'));
 }
 
 
