@@ -17,8 +17,8 @@ class HomeController extends Controller
     $onlineStudents = Student::where('courseLocation','online')->count();
     $offlineStudents = Student::where('courseLocation','onsite')->count();
     $trainers = Trainer::count();
-    $allCourses = Course::paginate(3);
-    $blogs = Blog::with(['user','categories'])->latest()->paginate(3);
+    $allCourses = Course::paginate(9);
+    $blogs = Blog::with(['user','categories'])->latest()->paginate(9);
 
     return view('user.home', compact('trainers','allStudents','onlineStudents','offlineStudents','allCourses','blogs'));
 }

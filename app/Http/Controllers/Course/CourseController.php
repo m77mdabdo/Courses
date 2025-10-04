@@ -17,7 +17,7 @@ class CourseController extends Controller
 
     public function show($id)
 {
-    $course = Course::with(['trainer', 'category', 'students'])->findOrFail($id);
+    $course = Course::with(['trainer', 'category', 'students','lessons'])->findOrFail($id);
 
     return view('user.course.course-details', compact('course'));
 }

@@ -33,31 +33,34 @@
                         <div class="content">
                             {!! nl2br(e($course->title)) !!}
                         </div>
+
                         <h4 class="title_top">Course Description</h4>
                         <div class="content">
                             {!! nl2br(e($course->desc)) !!}
                         </div>
 
-                        {{-- <h4 class="title">Eligibility</h4>
-                        <div class="content">
-                            {{ $course->eligibility ?? 'No specific eligibility mentioned.' }}
-                        </div> --}}
+                        <h4 class="title_top">Course Outline</h4>
 
-                        {{-- <h4 class="title">Course Outline</h4>
                         <div class="content">
                             <ul class="course_list">
-                                @if(!empty($course->small_desc))
-                                    @foreach(explode("\n", $course->outline) as $lesson)
+                                @if ($course->lessons->count())
+                                    @forelse($course->lessons as $lesson)
                                         <li class="justify-content-between align-items-center d-flex">
-                                            <p>{{ $lesson }}</p>
+                                            <p>
+                                                <strong>{{ $lesson->lesson_no }}.</strong> {{ $lesson->title }}
+                                            </p>
                                             <a class="btn_2 text-uppercase" href="#">View Details</a>
                                         </li>
-                                    @endforeach
+                                    @empty
+                                        <li>No lessons available.</li>
+                                    @endforelse
                                 @else
-                                    <li>No outline available.</li>
+                                    <li>No lessons available.</li>
                                 @endif
+
                             </ul>
-                        </div> --}}
+                        </div>
+
                     </div>
                 </div>
 

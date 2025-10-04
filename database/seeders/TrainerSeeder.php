@@ -14,6 +14,6 @@ class TrainerSeeder extends Seeder
     public function run(): void
     {
         //
-        Trainer::factory(10)->create();
+        Trainer::factory(30)->create();
     }
 }
