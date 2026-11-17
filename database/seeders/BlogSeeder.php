@@ -17,22 +17,22 @@ class BlogSeeder extends Seeder
     public function run(): void
     {
         //
-         // نعمل شوية كاتيجوريز
+         // Create a few categories
         $categories = BlogCategory::factory(5)->create();
 
-        // نجيب Users (طلاب أو مدربين) أو نعمل جدد
+        // Get users (students or instructors) or create new ones
         $users = User::factory(10)->create();
 
-        // نعمل Blogs
+        // Create blogs
         Blog::factory(20)
             ->create([
                 'user_id' => $users->random()->id,
             ])
             ->each(function ($blog) use ($categories, $users) {
-                // ربط الكاتيجوريز بالمدونة
+                // Attach categories to the blog
                 $blog->categories()->attach($categories->random(rand(1,3))->pluck('id')->toArray());
 
-                // نضيف تعليقات عشوائية
+                // Add random comments
                 BlogComment::factory(rand(2,5))->create([
                     'blog_id' => $blog->id,
                     'user_id' => $users->random()->id,

@@ -242,7 +242,7 @@
                     </div>
                 </div>
 
-                <!-- الصورة -->
+                <!-- Image -->
                 <div class="col-lg-6 col-md-6">
                     <div class="learning_img">
                         <img src="img/advance_feature_img.png" alt="Learning System">
@@ -391,7 +391,7 @@
                                 <img src="{{ asset('storage/img' . $blog->image) }}" class="card-img-top"
                                     alt="{{ $blog->title }}">
                                 <div class="card-body">
-                                    {{-- التصنيفات --}}
+                                    {{-- Categories --}}
                                     @if ($blog->categories->count())
                                         @foreach ($blog->categories as $category)
                                             <a href="#" class="btn_4">{{ $category->name }}</a>
@@ -400,15 +400,15 @@
                                         <a href="#" class="btn_4">Uncategorized</a>
                                     @endif
 
-                                    {{-- العنوان --}}
+                                    {{-- Title --}}
                                     <a href="{{ route('blogs.show', $blog->id) }}">
                                         <h5 class="card-title">{{ $blog->title }}</h5>
                                     </a>
 
-                                    {{-- المحتوى --}}
+                                    {{-- Content --}}
                                     <p>{{ Str::limit($blog->content, 120) }}</p>
 
-                                    {{-- الكومنتات + لايكات (لو عندك عمود likes) --}}
+                                    {{-- Comments + likes (if there is a likes column) --}}
                                     <ul>
                                         <li><span class="ti-comments"></span> {{ $blog->comments->count() }} Comments</li>
                                         <li><span class="ti-heart"></span> {{ $blog->likes ?? 0 }} Likes</li>
