@@ -12,7 +12,7 @@ class Course extends Model
     protected $fillable = ['title', 'desc', 'category_id', 'trainer_id', 'price', 'duration'];
     public function students()
 {
-    return $this->belongsToMany(Student::class, 'course_students'); // ✅ صح
+    return $this->belongsToMany(Student::class, 'course_students');
 }
     public function category()
     {
